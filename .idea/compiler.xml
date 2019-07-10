@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="view-service" />
         <module name="eureka-server" />
+        <module name="post-service" />
         <module name="data-service" />
       </profile>
     </annotationProcessing>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="data-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="post-service" options="-parameters" />
       <module name="springcloud" options="-parameters" />
       <module name="view-service" options="-parameters" />
     </option>
