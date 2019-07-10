@@ -1,5 +1,6 @@
 package com.learn.springcloud.dataservice;
 
+import brave.sampler.Sampler;
 import ch.qos.logback.core.util.TimeUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.net.NetUtil;
@@ -9,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
@@ -55,6 +57,11 @@ public class DataServiceApplication {
         }
 
         new SpringApplicationBuilder(DataServiceApplication.class).properties("server.port=" + port).run(args);
+    }
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 
 }

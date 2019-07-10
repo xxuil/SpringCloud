@@ -1,5 +1,6 @@
 package com.learn.springboot.viewservice;
 
+import brave.sampler.Sampler;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.core.thread.ThreadUtil;
@@ -10,6 +11,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
@@ -55,6 +57,13 @@ public class ViewServiceApplication {
             System.err.printf("端口%d被占用了，无法启动%n", port );
             System.exit(1);
         }
-        new SpringApplicationBuilder(ViewServiceApplication.class).properties("server.port=" + port).run(args);    }
+        new SpringApplicationBuilder(ViewServiceApplication.class).properties("server.port=" + port).run(args);
+    }
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
+
 
 }
