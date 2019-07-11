@@ -13,6 +13,14 @@ public class PostService {
     PostClient postClient;
 
     public List<Post> toMain() {
-        return postClient.toMain();
+    return postClient.list();
+    }
+
+    public Post toPost(int pid) {
+        return postClient.get(pid);
+    }
+
+    public void addPost(Post post) {
+        postClient.add(post);
     }
 }

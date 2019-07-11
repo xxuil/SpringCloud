@@ -1,12 +1,10 @@
 package com.learn.springcloud.postservice.controller;
 
 
+import com.learn.springcloud.postservice.pojo.Post;
 import com.learn.springcloud.postservice.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,18 +13,18 @@ public class PostController {
     @Autowired
     PostService ps;
 
-    @RequestMapping("/")
-    public Object toMain() {
+    @RequestMapping("/listPost")
+    public Object list() {
         return ps.getAll();
     }
 
     @RequestMapping("/p/{pid}")
-    public Object toPost(@PathVariable("pid") int pid) {
+    public Object get(@PathVariable("pid") int pid) {
         return ps.get(pid);
     }
 
     @RequestMapping(value = "/post/add", method = RequestMethod.POST)
-    public void addPost() {
-
+    public void add(@RequestBody Post post) {
+        ps.add(post);
     }
 }

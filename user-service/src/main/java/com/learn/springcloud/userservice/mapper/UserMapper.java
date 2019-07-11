@@ -1,0 +1,27 @@
+package com.learn.springcloud.userservice.mapper;
+
+import com.learn.springcloud.userservice.pojo.User;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
+
+@Mapper
+public interface UserMapper {
+    @Insert("insert into user (uid, username, password) values (#{uid}, #{username}, #{password})")
+    void add(User u);
+
+    @Update("update user set username = #{username}, password = #{password} where uid = #{uid}")
+    void update(User u);
+
+    @Select("select * from user where uid = #{uid}")
+    User get(int uid);
+
+    @Select("select * from user where username = #{username}")
+    List<User> check(String username);
+
+    @Delete("delete from user where uid = #{uid}")
+    void delete(int uid);
+
+    @Select("select COUNT(*) from user")
+    int getUserCount();
+}
