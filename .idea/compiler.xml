@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="view-service" />
-        <module name="eureka-server" />
         <module name="post-service" />
+        <module name="eureka-server" />
         <module name="data-service" />
       </profile>
     </annotationProcessing>
