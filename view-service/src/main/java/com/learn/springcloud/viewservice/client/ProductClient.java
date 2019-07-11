@@ -1,7 +1,7 @@
-package com.learn.springboot.viewservice.client;
+package com.learn.springcloud.viewservice.client;
 
 
-import com.learn.springboot.viewservice.pojo.Product;
+import com.learn.springcloud.viewservice.pojo.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

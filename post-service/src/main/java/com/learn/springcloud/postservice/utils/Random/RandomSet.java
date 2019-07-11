@@ -1,4 +1,4 @@
-package com.learn.springboot.utils.Random;
+package com.learn.springcloud.postservice.utils.Random;
 
 import java.util.HashSet;
 

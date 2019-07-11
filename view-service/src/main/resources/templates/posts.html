@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>posts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+
+        table {
+            border-collapse:collapse;
+            width:400px;
+            margin:20px auto;
+        }
+        td,th{
+            border:1px solid gray;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="workingArea">
+    <table>
+        <thead>
+            <tr>
+                <th>pid</th>
+                <th>title</th>
+                <th>content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p: ${posts}">
+                <td th:text="${p.pid}"></td>
+                <td th:text="${p.title}"></td>
+                <td th:text="${p.content}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

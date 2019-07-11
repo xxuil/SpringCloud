@@ -1,4 +1,4 @@
-package com.learn.springboot.viewservice;
+package com.learn.springcloud.viewservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

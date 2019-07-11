@@ -1,8 +1,8 @@
-package com.learn.springboot.viewservice.web;
+package com.learn.springcloud.viewservice.web;
 
 
-import com.learn.springboot.viewservice.pojo.Product;
-import com.learn.springboot.viewservice.service.ProductService;
+import com.learn.springcloud.viewservice.pojo.Product;
+import com.learn.springcloud.viewservice.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.learn.springboot.utils.Redis;
+package com.learn.springcloud.postservice.utils.Redis;
 
 import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;

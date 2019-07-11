@@ -1,4 +1,4 @@
-package com.learn.springboot.viewservice.pojo;
+package com.learn.springcloud.viewservice.pojo;
 
 public class Product {
     private int id;
