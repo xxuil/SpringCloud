@@ -16,7 +16,7 @@ public interface ReplyMapper {
     @Delete("delete from reply where rid= #{rid}")
     void delete(int rid);
 
-    @Select("select * from reply where postId = #{postId} order by time desc")
+    @Select("select * from reply where postId = #{postId} order by time asc")
     List<Reply> findReplies(int postId);
 
     @Select("select COUNT(*) from reply where postId = #{postId}")

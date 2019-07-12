@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>register</title>
+    <title>login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style>
 
@@ -18,13 +18,13 @@
     </style>
 </head>
 <body>
-<form action="/newPost" method="post">
-    <a>title</a>
-    <input name="title" placeholder="title">
+<form action="/user/check" method="post">
+    <a>username</a>
+    <input name="username" placeholder="username">
     <br/>
-    <a>content</a>
-    <input name="content" placeholder="content">
-    <button>add</button>
+    <a>password</a>
+    <input name="password" placeholder="password">
+    <button>login</button>
 </form>
 </body>
 </html>

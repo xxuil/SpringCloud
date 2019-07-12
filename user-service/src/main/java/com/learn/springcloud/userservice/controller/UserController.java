@@ -1,25 +1,28 @@
 package com.learn.springcloud.userservice.controller;
 
 import com.learn.springcloud.userservice.pojo.User;
+import com.learn.springcloud.userservice.service.LoginLogService;
 import com.learn.springcloud.userservice.service.UserService;
+import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/addUser")
-    public void add(User u) {
+    @Autowired
+    LoginLogService loginLogService;
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public void add(@RequestBody User u) {
         userService.addUser(u);
     }
 
-    @RequestMapping("/loginUser")
-    public boolean login(String name, String pwd) {
-        return userService.login(name, pwd);
+    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+    public boolean login(@RequestBody User user) {
+        return userService.login(user.getUsername(), user.getPassword());
     }
 
     @RequestMapping("/getUser/{uid}")
@@ -27,8 +30,8 @@ public class UserController {
         return userService.get(uid);
     }
 
-    @RequestMapping("/getUser/{name}")
-    public User getByName(@PathVariable("name") String name) {
+    @RequestMapping(value = "/getUserByName", method = RequestMethod.POST)
+    public User getByName(@RequestBody String name) {
         return userService.getByName(name);
     }
 

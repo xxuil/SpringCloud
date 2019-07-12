@@ -30,13 +30,58 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="p: ${posts}">
-            <td th:text="${p.pid}"></td>
-            <td th:text="${p.title}"></td>
-            <td th:text="${p.content}"></td>
+        <tr>
+            <td th:text="${post.pid}"></td>
+            <td th:text="${post.title}"></td>
+            <td th:text="${post.content}"></td>
         </tr>
         </tbody>
     </table>
+</div>
+
+<div class="workingArea">
+    <table>
+        <thead>
+        <tr>
+            <th>user</th>
+            <th>content</th>
+            <th>time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="r: ${replies}">
+            <td th:text="${r.userId}"></td>
+            <td th:text="${r.content}"></td>
+            <td th:text="${r.time}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="workingArea">
+    <table>
+        <thead>
+        <tr>
+            <th>uid</th>
+            <th>name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${user.uid}"></td>
+            <td th:text="${user.username}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+<form action="/reply/add" method="post">
+    <a>content</a>
+    <input name="content" placeholder="content">
+    <input type="hidden" name="postId" th:value="${post.pid}">
+    <input type="hidden" name="userId" th:value="${user.uid}">
+    <button>reply</button>
+</form>
 </div>
 </body>
 </html>

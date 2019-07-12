@@ -12,13 +12,12 @@ public class ReplyController {
     @Autowired
     ReplyService replyService;
 
-    @RequestMapping(value = "/reply/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/addReply", method = RequestMethod.POST)
     public void add(@RequestBody Reply reply){
         replyService.addReply(reply);
     }
 
-
-    @RequestMapping("/getReplies")
+    @RequestMapping("/getReplies/{pid}")
     public List<Reply> getReplies(@PathVariable("pid") int pid) {
         return replyService.getReplies(pid);
     }

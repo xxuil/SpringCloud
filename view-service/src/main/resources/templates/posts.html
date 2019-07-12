@@ -27,6 +27,10 @@
                 <th>pid</th>
                 <th>title</th>
                 <th>content</th>
+                <th>time</th>
+                <th>user</th>
+                <th>click</th>
+                <th>reply</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +38,27 @@
                 <td th:text="${p.pid}"></td>
                 <td th:text="${p.title}"></td>
                 <td th:text="${p.content}"></td>
+                <td th:text="${p.time}"></td>
+                <td th:text="${p.userId}"></td>
+                <td th:text="${p.viewCount}"></td>
+                <td th:text="${p.replyCount}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="workingArea">
+    <table>
+        <thead>
+        <tr>
+            <th>uid</th>
+            <th>name</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${user.uid}"></td>
+                <td th:text="${user.username}"></td>
             </tr>
         </tbody>
     </table>
