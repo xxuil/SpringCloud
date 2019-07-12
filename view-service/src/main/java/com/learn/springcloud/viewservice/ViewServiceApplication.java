@@ -22,6 +22,4 @@ public class ViewServiceApplication {
     public Sampler defaultSampler() {
         return Sampler.ALWAYS_SAMPLE;
     }
-
-
 }
