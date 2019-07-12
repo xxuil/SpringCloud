@@ -11,6 +11,7 @@
         <module name="service-consumer" />
         <module name="post-service" />
         <module name="user-service" />
+        <module name="reply-service" />
         <module name="data-service" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="data-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="post-service" options="-parameters" />
+      <module name="reply-service" options="-parameters" />
       <module name="service-consumer" options="-parameters" />
       <module name="springcloud" options="-parameters" />
       <module name="user-service" options="-parameters" />
