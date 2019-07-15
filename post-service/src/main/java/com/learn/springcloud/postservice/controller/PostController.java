@@ -14,7 +14,8 @@ public class PostController {
     PostService ps;
 
     @RequestMapping("/listPost")
-    public Object list() {
+    public Object list() throws InterruptedException{
+        Thread.sleep(5000L);
         return ps.getAll();
     }
 

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -30,12 +29,18 @@ public class PostController {
 
     @RequestMapping("/")
     public Object toMain(HttpSession session, Model m) {
-        if(session.getAttribute("userId") == null) {
-            return "/login";
-        }
+//        if(session.getAttribute("userId") == null) {
+//            return "/login";
+//        }
         List<Post> posts = postService.toMain();
-        int uid = (int) session.getAttribute("userId");
-        User user = userService.getByUid(uid);
+//        int uid = (int) session.getAttribute("userId");
+//        User user = userService.getByUid(uid);
+
+        User user = new User();
+        user.setUid(0);
+        user.setUsername("test");
+        user.setPassword("test");
+
         m.addAttribute("user", user);
         m.addAttribute("posts", posts);
         return "posts";

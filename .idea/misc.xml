@@ -13,6 +13,9 @@
         <option value="$PROJECT_DIR$/post-service/pom.xml" />
         <option value="$PROJECT_DIR$/user-service/pom.xml" />
         <option value="$PROJECT_DIR$/reply-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix-service/pom.xml" />
+        <option value="$PROJECT_DIR$/zuul-server/pom.xml" />
+        <option value="$PROJECT_DIR$/turbine-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

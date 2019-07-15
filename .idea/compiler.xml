@@ -6,10 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hystrix-service" />
         <module name="eureka-server" />
         <module name="view-service" />
+        <module name="zuul-server" />
         <module name="post-service" />
         <module name="user-service" />
+        <module name="turbine-server" />
         <module name="reply-service" />
       </profile>
     </annotationProcessing>
@@ -24,14 +27,17 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="data-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="hystrix-service" options="-parameters" />
       <module name="post-service" options="-parameters" />
       <module name="reply-service" options="-parameters" />
       <module name="service-consumer" options="-parameters" />
       <module name="springcloud" options="-parameters" />
+      <module name="turbine-server" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="view-module" options="-parameters" />
       <module name="view-service" options="-parameters" />
       <module name="viewmodule" options="-parameters" />
+      <module name="zuul-server" options="-parameters" />
     </option>
   </component>
 </project>

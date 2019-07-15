@@ -3,6 +3,7 @@ package com.learn.springcloud.viewservice.service;
 import com.learn.springcloud.viewservice.client.PostClient;
 import com.learn.springcloud.viewservice.pojo.Post;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,11 @@ public class PostService {
     @Autowired
     PostClient postClient;
 
-    @HystrixCommand(fallbackMethod = "fallback")
+    @HystrixCommand(fallbackMethod = "fallback",
+    commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "1")
+    }
+    )
     public List<Post> toMain() {
     return postClient.list();
     }
