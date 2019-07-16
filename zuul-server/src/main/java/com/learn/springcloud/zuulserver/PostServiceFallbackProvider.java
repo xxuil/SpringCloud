@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @Component
-public class ProductServiceFallbackProvider implements FallbackProvider {
+public class PostServiceFallbackProvider implements FallbackProvider {
     @Override
     public String getRoute() {
         return "post-service";

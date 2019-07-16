@@ -13,9 +13,6 @@ public class PostService {
     @Autowired
     PostMapper postMapper;
 
-//    @Autowired
-//    RedisUtil<Post> redisUtil;
-
     public void add(Post p) {
         postMapper.add(p);
     }

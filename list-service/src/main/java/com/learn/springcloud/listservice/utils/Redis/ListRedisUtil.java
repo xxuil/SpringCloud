@@ -1,12 +1,11 @@
-package com.learn.springcloud.postservice.utils.Redis;
+package com.learn.springcloud.listservice.utils.Redis;
 
-import org.apache.ibatis.jdbc.Null;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
-import java.util.concurrent.ExecutionException;
+
 
 /**
  * RedisUtil
@@ -14,7 +13,7 @@ import java.util.concurrent.ExecutionException;
  */
 
 @Service
-public class RedisUtil<T> {
+public class ListRedisUtil<T> {
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -28,7 +27,7 @@ public class RedisUtil<T> {
      * @return 返回list值
      */
     @SuppressWarnings("unchecked")
-    public <T> ListOperations<String, T> setCatcheList(String key, List<T> dataList) {
+    public <T> ListOperations<String, T> set(String key, List<T> dataList) {
         ListOperations<String, T> listOperations = redisTemplate.opsForList();
         try{
             for(T obj : dataList){
@@ -41,7 +40,7 @@ public class RedisUtil<T> {
     }
 
     @SuppressWarnings("unchecked")
-    public <T> List<T> getPageList(String key, long start, long end){
+    public <T> List<T> get(String key, long start, long end){
         List<T> pageList = new ArrayList<>();
         try{
             ListOperations<String, T> listOperations = redisTemplate.opsForList();
@@ -61,7 +60,7 @@ public class RedisUtil<T> {
      * @return dataList 列表
      */
     @SuppressWarnings("unchecked")
-    public <T> List<T> getCatcheList(String key) {
+    public <T> List<T> get(String key) {
         List<T> dataList = new ArrayList<>();
         try{
             ListOperations listOperations = redisTemplate.opsForList();

@@ -1,4 +1,4 @@
-package com.learn.springcloud.viewservice.pojo;
+package com.learn.springcloud.listservice.pojo;
 
 import java.io.Serializable;
 

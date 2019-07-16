@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/post")
 public class PostController {
     @Autowired
     PostService ps;
 
-    @RequestMapping("/listPost")
-    public Object list() throws InterruptedException{
-        Thread.sleep(5000L);
+    @RequestMapping("/list")
+    public Object list() {
         return ps.getAll();
     }
 
-    @RequestMapping("/p/{pid}")
+    @RequestMapping("/{pid}")
     public Object get(@PathVariable("pid") int pid) {
         return ps.get(pid);
     }
 
-    @RequestMapping(value = "/post/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public void add(@RequestBody Post post) {
         ps.add(post);
     }

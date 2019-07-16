@@ -15,13 +15,8 @@ public class PostService {
     @Autowired
     PostClient postClient;
 
-    @HystrixCommand(fallbackMethod = "fallback",
-    commandProperties = {
-            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "1")
-    }
-    )
     public List<Post> toMain() {
-    return postClient.list();
+        return postClient.list();
     }
 
     public Post toPost(int pid) {
@@ -30,20 +25,5 @@ public class PostService {
 
     public void addPost(Post post) {
         postClient.add(post);
-    }
-
-    public List<Post> fallback() {
-        Post p =  new Post();
-        p.setUserId(0);
-        p.setTitle("fallback");
-        p.setContent("fallback");
-        p.setTime("fallback");
-        p.setUserId(0);
-        p.setReplyCount(0);
-        p.setViewCount(0);
-
-        List<Post> ps = new ArrayList<>();
-        ps.add(p);
-        return ps;
     }
 }

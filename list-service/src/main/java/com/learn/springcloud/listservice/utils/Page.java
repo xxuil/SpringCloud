@@ -1,4 +1,4 @@
-package com.learn.springcloud.postservice.utils;
+package com.learn.springcloud.listservice.utils;
 
 public class Page {
     int start=0;

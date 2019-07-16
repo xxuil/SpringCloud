@@ -7,6 +7,7 @@
         <artifactId>springcloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
     <artifactId>post-service</artifactId>
 
     <dependencies>
@@ -14,29 +15,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.4.7.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
-            <version>2.1.9.RELEASE</version>
-        </dependency>
-
-        <!-- 数据库连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.0.29</version>
         </dependency>
 
         <!-- SQL Tools -->
@@ -50,11 +39,6 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
         <dependency>

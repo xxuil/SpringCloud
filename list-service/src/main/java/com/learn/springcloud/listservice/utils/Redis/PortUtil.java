@@ -1,4 +1,4 @@
-package com.learn.springcloud.postservice.utils.Redis;
+package com.learn.springcloud.listservice.utils.Redis;
 
 import java.io.IOException;
 import java.net.ServerSocket;
