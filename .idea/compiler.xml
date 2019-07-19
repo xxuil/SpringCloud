@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hystrix-service" />
         <module name="eureka-server" />
-        <module name="view-service" />
         <module name="list-service" />
         <module name="zuul-server" />
         <module name="post-service" />
@@ -21,6 +20,7 @@
       <module name="data-service" target="1.8" />
       <module name="service-consumer" target="1.8" />
       <module name="view-module" target="1.8" />
+      <module name="view-service" target="1.8" />
       <module name="viewmodule" target="1.8" />
     </bytecodeTargetLevel>
   </component>
